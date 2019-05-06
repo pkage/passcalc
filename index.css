@@ -67,3 +67,8 @@ a {
 	text-decoration: none;
 	color: blue !important;
 }
+
+#exam_weight, #coursework_weight {
+	display: inline-block;
+	width: 2.5em;
+}
