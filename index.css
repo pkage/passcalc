@@ -28,6 +28,11 @@ main {
 				0 11px 15px -7px rgba(0,0,0,0.2);
 }
 
+input {
+    font-family: Lato;
+    font-size: 16px;
+}
+
 
 @media (min-width: 768px) {
 	main {
