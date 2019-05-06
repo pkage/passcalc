@@ -1,7 +1,7 @@
 const computeTweetUrl = (score) => {
 	const anchor = document.querySelector('#tweetthis')
 
-	const uri = `https://twitter.com/intent/tweet?text=I need a ${score} to pass my exams 😱`
+	const uri = `https://twitter.com/intent/tweet?text=I need a ${score}% to pass my exams 😱`
 
 	anchor.setAttribute('href', encodeURI(uri))
 }
