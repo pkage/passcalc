@@ -36,11 +36,16 @@ h4 {
 	margin-bottom: 0.2em;
 }
 
+div h4 {
+	margin: 0;
+}
+
 .level {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: flex-start;
+	justify-content: space-between;
+	margin: 0.5em 0;
 }
 
 .finalScore {
@@ -51,11 +56,25 @@ h4 {
 	opacity: 0.4;
 }
 
-#coursework,
-#courseworkHeading {
+#plus,
+.minus {
+	color: #3c3c3c;
+	font-size: 2em;
+}
+
+.coursework,
+.courseworkHeading {
 	display: inline;
-	margin-top: 1em;
 	vertical-align: bottom;
+}
+
+.courseworkDiv {
+	margin-top: 1em;
+}
+
+#weighting,
+.coursework {
+	flex-grow: 0.5;
 }
 
 @media (min-width: 768px) {
@@ -65,10 +84,7 @@ h4 {
 		bottom: 15px;
 		right: 15px;
 	}
-}
 
-
-@media (min-width: 768px) {
 	main {
 		padding: 60px;
 	}
