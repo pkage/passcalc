@@ -43,6 +43,17 @@ const updateCoursework = () => {
 
 const addCoursework = () => {
 	const parent = document.getElementById('plus').parentNode;
+
+	document.getElementById('plus').removeEventListener('click', addCoursework)
+
+	const plus = document.getElementById('plus');
+	plus.innerHTML = '–';
+	plus.className = 'minus';
+	plus.id = '';
+	plus.addEventListener('click', () => {
+		removeCoursework(plus.parentNode)
+	})
+
 	let strVar = "";
 	strVar += "	<div class='level courseworkDiv'>";
 	strVar += "			<h4 class='courseworkHeading'>Coursework score <span class='coursework_score'>50<\/span>%<\/h4>";
@@ -54,6 +65,12 @@ const addCoursework = () => {
 	parent.insertAdjacentElement('afterend', newElement);
 
 	newElement.outerHTML = strVar;
+
+	document.getElementById('plus').addEventListener('click', addCoursework)
+}
+
+const removeCoursework = (parent) => {
+	parent.remove();
 }
 
 // attach events
