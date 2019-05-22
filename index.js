@@ -8,7 +8,7 @@ const computeTweetUrl = (score) => {
 
 const calculateFinalScore = (weight, cw) => {
 	weight = document.querySelector('#weighting').value
-	cw = document.querySelector('#coursework').value
+	cw = document.querySelector('.coursework').value
 
 	weight = weight / 100
 	cw = cw / 100
@@ -41,9 +41,25 @@ const updateCoursework = () => {
 	requestAnimationFrame(calculateFinalScore)
 }
 
+const addCoursework = () => {
+	const parent = document.getElementById('plus').parentNode;
+	let strVar = "";
+	strVar += "	<div class='level courseworkDiv'>";
+	strVar += "			<h4 class='courseworkHeading'>Coursework score <span class='coursework_score'>50<\/span>%<\/h4>";
+	strVar += "			<input type='range' class='coursework' value='50' min='0' max='100' step='1'>";
+	strVar += "			<h4 id='plus'>+<\/h4>";
+	strVar += "	<\/div>";
+
+	const newElement = document.createElement('div')
+	parent.insertAdjacentElement('afterend', newElement);
+
+	newElement.outerHTML = strVar;
+}
+
 // attach events
 document.querySelector('#weighting').addEventListener('change', updateWeighting)
 document.querySelector('#weighting').addEventListener('input', updateWeighting)
-document.querySelector('#coursework').addEventListener('change', updateCoursework)
-document.querySelector('#coursework').addEventListener('input', updateCoursework)
+document.querySelector('.coursework').addEventListener('change', updateCoursework)
+document.querySelector('.coursework').addEventListener('input', updateCoursework)
+document.querySelector('#plus').addEventListener('click', addCoursework)
 calculateFinalScore()
