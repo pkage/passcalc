@@ -8,12 +8,12 @@ const computeTweetUrl = (score) => {
 
 const calculateFinalScore = (weight, cw) => {
 	weight = document.querySelector('#weighting').value
-	cw     = document.querySelector('#coursework').value
+	cw = document.querySelector('#coursework').value
 
 	weight = weight / 100
-	cw     = cw / 100
+	cw = cw / 100
 
-	let finalScore = ( 0.40 - ( cw * (1 - weight)) ) / weight
+	let finalScore = (0.40 - (cw * (1 - weight))) / weight
 
 	finalScore = Math.max(finalScore, 0)
 	finalScore = (finalScore * 100).toFixed(1)
@@ -34,13 +34,16 @@ const updateWeighting = () => {
 }
 
 const updateCoursework = () => {
+	const coursework = document.querySelector('#coursework').value
+
+	document.querySelector('#coursework_score').innerText = coursework
+
 	requestAnimationFrame(calculateFinalScore)
 }
-
 
 // attach events
 document.querySelector('#weighting').addEventListener('change', updateWeighting)
 document.querySelector('#weighting').addEventListener('input', updateWeighting)
 document.querySelector('#coursework').addEventListener('change', updateCoursework)
-document.querySelector('#coursework').addEventListener('keyup', updateCoursework)
+document.querySelector('#coursework').addEventListener('input', updateCoursework)
 calculateFinalScore()

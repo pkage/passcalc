@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 
 <html>
-	<head lang="en" xmnls:fb="http://ogp.me/ns/fb#">
-		<title>Pass Calculator</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="index.css">
-		<link rel="icon" href="icon.png">
 
-		<meta property="og:title" content="40% Pass Calculator" />
-		<meta property="og:description" content="how much do you need to score to barely scrape by"/>
-		<meta property="og:image" content="https://kagelabs.org/passcalc/preview.png" />
-		
-	</head>
-	<body>
-		<main>
-			<h1>How much do I need to pass?</h1>
-			<p> A simple calculator to figure out how many points you need to hit a 40.</p>
+<head lang="en" xmnls:fb="http://ogp.me/ns/fb#">
+	<title>Pass Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="icon" href="icon.png">
 
-			<h4>Grade weighting</h4>
+	<meta property="og:title" content="40% Pass Calculator" />
+	<meta property="og:description" content="how much do you need to score to barely scrape by" />
+	<meta property="og:image" content="https://kagelabs.org/passcalc/preview.png" />
 
-			<div class="level">
-				<div>Exam: <span id="exam_weight">75</span>%</div>
-				<input type="range" id="weighting" value="75" min="5" max="100" step="5">
-				<div>Coursework: <span id="coursework_weight">25</span>%</div>
-			</div>
-			
-			<h4>Coursework score</h4>
+</head>
 
-			<input type="number" id="coursework" min="0" max="100" value="50">
+<body>
+	<main>
+		<h1>How much do I need to pass?</h1>
+		<p> A simple calculator to figure out how many points you need to hit a 40.</p>
 
-			<h4>Minimum Exam Score</h4>
-			<h1 class="finalScore"><span id="final">40.0</span>%</h1>
+		<h4>Grade weighting</h4>
 
-			<span class="authortag"> made with &hearts; by <a href="//kagelabs.org" target="_blank">patrick kage</a> // <a id="tweetthis">tweet this</a></span>
-		</main>
+		<div class="level">
+			<div>Exam: <span id="exam_weight">75</span>%</div>
+			<input type="range" id="weighting" value="75" min="5" max="100" step="5">
+			<div>Coursework: <span id="coursework_weight">25</span>%</div>
+		</div>
 
-		<script src="index.js"></script>
+		<h4 id='courseworkHeading'>Coursework score <span id="coursework_score">50</span>%</div>
+		</h4>
+		<input type="range" id="coursework" value="50" min="0" max="100" step="1">
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-59092114-5"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+		<h4>Minimum Exam Score</h4>
+		<h1 class="finalScore"><span id="final">40.0</span>%</h1>
 
-			gtag('config', 'UA-59092114-5');
-		</script>
+		<span class="authortag"> made with &hearts; by <a href="//kagelabs.org" target="_blank">patrick kage</a> // <a
+				id="tweetthis">tweet this</a></span>
+	</main>
 
-	</body>
+	<script src="index.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-59092114-5"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-59092114-5');
+	</script>
+
+</body>
+
 </html>
