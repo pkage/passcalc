@@ -50,7 +50,7 @@ const addCoursework = () => {
 	document.getElementById('plus').removeEventListener('click', addCoursework)
 
 	const plus = document.getElementById('plus');
-	plus.innerHTML = '–';
+	plus.innerHTML = '-';
 	plus.className = 'minus';
 	plus.id = '';
 	plus.addEventListener('click', () => {

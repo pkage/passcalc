@@ -58,8 +58,15 @@ div h4 {
 
 #plus,
 .minus {
-	color: #3c3c3c;
+	color: #494949;
+}
+
+#plus {
 	font-size: 2em;
+}
+
+.minus {
+	font-size: 2.75em;
 }
 
 .coursework,
