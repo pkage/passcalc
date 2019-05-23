@@ -33,10 +33,8 @@ const updateWeighting = () => {
 	requestAnimationFrame(calculateFinalScore)
 }
 
-const updateCoursework = () => {
-	const coursework = document.querySelector('#coursework').value
-
-	document.querySelector('#coursework_score').innerText = coursework
+const updateCoursework = (node, value) => {
+	node.innerText = value
 
 	requestAnimationFrame(calculateFinalScore)
 }
@@ -66,7 +64,20 @@ const addCoursework = () => {
 
 	newElement.outerHTML = strVar;
 
-	document.getElementById('plus').addEventListener('click', addCoursework)
+	const newPlus = document.getElementById('plus')
+	newPlus.addEventListener('click', addCoursework)
+
+	const coursework = newPlus.parentNode.childNodes[3];
+	coursework.addEventListener('change', () => {
+		const node = coursework.parentNode.childNodes[1].childNodes[1];
+		const value = coursework.value
+		updateCoursework(node, value)
+	})
+	coursework.addEventListener('input', () => {
+		const node = coursework.parentNode.childNodes[1].childNodes[1];
+		const value = coursework.value
+		updateCoursework(node, value)
+	})
 }
 
 const removeCoursework = (parent) => {
@@ -76,7 +87,18 @@ const removeCoursework = (parent) => {
 // attach events
 document.querySelector('#weighting').addEventListener('change', updateWeighting)
 document.querySelector('#weighting').addEventListener('input', updateWeighting)
-document.querySelector('.coursework').addEventListener('change', updateCoursework)
-document.querySelector('.coursework').addEventListener('input', updateCoursework)
+
+let coursework = document.querySelector('.coursework')
+coursework.addEventListener('change', () => {
+	const node = coursework.parentNode.childNodes[1].childNodes[1];
+	const value = coursework.value
+	updateCoursework(node, value)
+})
+coursework.addEventListener('input', () => {
+	const node = coursework.parentNode.childNodes[1].childNodes[1];
+	const value = coursework.value
+	updateCoursework(node, value)
+})
+
 document.querySelector('#plus').addEventListener('click', addCoursework)
 calculateFinalScore()
