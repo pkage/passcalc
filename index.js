@@ -8,7 +8,13 @@ const computeTweetUrl = (score) => {
 
 const calculateFinalScore = (weight, cw) => {
 	weight = document.querySelector('#weighting').value
-	cw = document.querySelector('.coursework').value
+	cwScores = document.querySelectorAll('.coursework')
+
+	sum = 0
+	for (let score of cwScores) {
+		sum += parseInt(score.value)
+	}
+	cw = sum / cwScores.length
 
 	weight = weight / 100
 	cw = cw / 100
@@ -20,7 +26,6 @@ const calculateFinalScore = (weight, cw) => {
 
 	document.querySelector('#final').innerText = finalScore
 	computeTweetUrl(finalScore)
-
 }
 
 const updateWeighting = () => {
