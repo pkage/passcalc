@@ -32,8 +32,8 @@ const updateWeighting = () => {
 	const exam_weight = document.querySelector('#weighting').value
 
 	// update readouts
-	document.querySelector('#exam_weight').innerText = exam_weight
-	document.querySelector('#coursework_weight').innerText = 100 - exam_weight
+	document.querySelector('#exam_weight').innerText = `${exam_weight}%`
+	document.querySelector('#coursework_weight').innerText = `${100 - exam_weight}%`
 
 	requestAnimationFrame(calculateFinalScore)
 }
