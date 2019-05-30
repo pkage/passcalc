@@ -5,7 +5,6 @@ html {
 	background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 }
 
-
 body {
 	margin: 0;
 
@@ -23,32 +22,30 @@ main {
 	background-color: white;
 	padding: 2em;
 
-	box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14),
-				0 9px 46px 8px rgba(0,0,0,0.12),
-				0 11px 15px -7px rgba(0,0,0,0.2);
+	box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+		0 9px 46px 8px rgba(0, 0, 0, 0.12),
+		0 11px 15px -7px rgba(0, 0, 0, 0.2);
 }
-
 input {
     font-family: Lato;
     font-size: 16px;
 }
 
 
-@media (min-width: 768px) {
-	main {
-		padding: 60px;
-	}
+h4 {
+	margin-bottom: 0.2em;
+}
+
+div h4 {
+	margin: 0;
 }
 
 .level {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: flex-start;
-}
-
-h4 {
-	margin-bottom: 0.2em;
+	justify-content: space-between;
+	margin: 0.5em 0;
 }
 
 .finalScore {
@@ -59,6 +56,34 @@ h4 {
 	opacity: 0.4;
 }
 
+#plus,
+.minus {
+	color: #494949;
+}
+
+#plus {
+	font-size: 2em;
+}
+
+.minus {
+	font-size: 2.75em;
+}
+
+.coursework,
+.courseworkHeading {
+	display: inline;
+	vertical-align: bottom;
+}
+
+.courseworkDiv {
+	margin-top: 1em;
+}
+
+#weighting,
+.coursework {
+	flex-grow: 0.5;
+}
+
 @media (min-width: 768px) {
 	.authortag {
 		position: absolute;
@@ -66,8 +91,11 @@ h4 {
 		bottom: 15px;
 		right: 15px;
 	}
-}
 
+	main {
+		padding: 60px;
+	}
+}
 a {
 	text-decoration: none;
 	color: blue;
