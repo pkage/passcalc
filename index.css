@@ -110,3 +110,43 @@ a:hover {
 	display: inline-block;
 	width: 2.5em;
 }
+
+.degreeClasses > input {
+    display: none;
+
+}
+
+.degreeClasses {
+}
+
+.degreeClass {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex-grow: 1;
+
+    margin: 2px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding: 1em 0 1em 0;
+
+    transition: border 0.25s cubic-bezier(0,0,0.3,1),
+                color  0.25s cubic-bezier(0,0,0.3,1);
+}
+
+.degreeClass:hover {
+    border: 1px solid #ccc;
+}
+
+.degreeClasses > input:checked+label {
+    color: #27ae60;
+    border: 1px solid #27ae60;
+}
+
+
+
+
+

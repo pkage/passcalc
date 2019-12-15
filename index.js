@@ -6,9 +6,23 @@ const computeTweetUrl = (score) => {
 	anchor.setAttribute('href', encodeURI(uri))
 }
 
+const getTargetExamScore = () => {
+    const grades = {third: 0.40, twotwo: 0.5, twoone: 0.6, first: 0.7}
+    const els = document.querySelectorAll('[name="honors"]')
+
+    for (let el of els) {
+        if (el.checked) {
+            return grades[el.value]
+        }
+    }
+    return grades['third']
+}
+
 const calculateFinalScore = (weight, cw) => {
 	weight = document.querySelector('#weighting').value
 	cwScores = document.querySelectorAll('.coursework')
+
+    targetScore = getTargetExamScore()
 
 	sum = 0
 	for (let score of cwScores) {
@@ -19,7 +33,7 @@ const calculateFinalScore = (weight, cw) => {
 	weight = weight / 100
 	cw = cw / 100
 
-	let finalScore = (0.40 - (cw * (1 - weight))) / weight
+	let finalScore = (targetScore - (cw * (1 - weight))) / weight
 
 	finalScore = Math.max(finalScore, 0)
 	finalScore = (finalScore * 100).toFixed(1)
@@ -92,6 +106,7 @@ const removeCoursework = (parent) => {
 // attach events
 document.querySelector('#weighting').addEventListener('change', updateWeighting)
 document.querySelector('#weighting').addEventListener('input', updateWeighting)
+document.querySelectorAll('[name=honors]').forEach(e => e.addEventListener('change', calculateFinalScore))
 
 let coursework = document.querySelector('.coursework')
 coursework.addEventListener('change', () => {

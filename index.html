@@ -22,9 +22,9 @@
 		<h4>Grade weighting</h4>
 
 		<div class="level">
-			<div>Exam: <span id="exam_weight">75</span>%</div>
+			<div>Exam: <span id="exam_weight">75%</span></div>
 			<input type="range" id="weighting" value="75" min="5" max="100" step="5">
-			<div>Coursework: <span id="coursework_weight">25</span>%</div>
+			<div>Coursework: <span id="coursework_weight">25%</span></div>
 		</div>
 
 		<div class='level courseworkDiv'>
@@ -32,6 +32,29 @@
 			<input type="range" class="coursework" value="50" min="0" max="100" step="1">
 			<h4 id='plus'>+</h4>
 		</div>
+
+        <div class="level degreeClasses">
+            <input type="radio" name="honors" value="third" id="third" checked>
+            <label for="third" class="degreeClass">
+                <span>Third</span>
+                <i>40%</i>
+            </label>
+            <input type="radio" name="honors" value="twotwo" id="twotwo">
+            <label for="twotwo" class="degreeClass">
+                <span>2:2</span>
+                <i>50%</i>
+            </label>
+            <input type="radio" name="honors" value="twoone" id="twoone">
+            <label for="twoone" class="degreeClass">
+                <span>2:1</span>
+                <i>60%</i>
+            </label>
+            <input type="radio" name="honors" value="first" id="first">
+            <label for="first" class="degreeClass">
+                <span>First</span>
+                <i>70%</i>
+            </label>
+        </div>
 
 		<h4>Minimum Exam Score</h4>
 		<h1 class="finalScore"><span id="final">40.0</span>%</h1>
