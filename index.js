@@ -23,6 +23,7 @@ const calculateFinalScore = (weight, cw) => {
 	cwScores = document.querySelectorAll('.coursework')
 
     targetScore = getTargetExamScore()
+    document.querySelector('#targetscore').innerText = targetScore * 100
 
 	sum = 0
 	for (let score of cwScores) {
